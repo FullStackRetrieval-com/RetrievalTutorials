@@ -1,10 +1,10 @@
 # Maximum Marginal Relevance (MMR)
 
-<!-- {% embed url="https://youtu.be/eaZu5_dLKNk" %} -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eaZu5_dLKNk?si=k4kwnvw7HoPaY1iM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Overview
 
-_MMR is a search type which specificies your_ [_Retrieval Method_](./)
+_MMR is a search type which specificies your Retrieval Method_
 
 > The Maximal Marginal Relevance (MMR) criterion strives to reduce redundancy while maintaining query relevance in re-ranking retrieved documents - [_Source_](https://www.cs.cmu.edu/\~jgc/publication/The\_Use\_MMR\_Diversity\_Based\_LTMIR\_1998.pdf)
 
@@ -74,33 +74,26 @@ Then I'll make two retrievers to compare the outputs with each other:
 * **Vanilla** - Regular Top K Similarity Search
 * **MMR** - Do a MMR search
 
-<!-- {% code overflow="wrap" fullWidth="false" %} -->
 ```python
 retriever_vanilla = vectordb.as_retriever(search_type="similarity", search_kwargs={"k": 8})
 
 retriever_mmr = vectordb.as_retriever(search_type="mmr", search_kwargs={"k": 8})
 ```
-<!-- {% endcode %} -->
 
 Let's go get the docs that come from the vanilla retriever
 
-<!-- {% code overflow="wrap" %} -->
 ```python
 vanilla_relevant_docs = retriever_vanilla.get_relevant_documents("What is the best way to make and keep wealth?")
 ```
-<!-- {% endcode %} -->
 
 and the docs that come from the MMR retriever
 
-<!-- {% code overflow="wrap" %} -->
 ```python
 mmr_relevant_docs = retriever_mmr.get_relevant_documents("What is the best way to make and keep wealth?")
 ```
-<!-- {% endcode %} -->
 
 This is a long winded function to help compare the two lists together
 
-<!-- {% code overflow="wrap" %} -->
 ```python
 def analyze_list_overlap(list1, list2, content_attr='page_content'):
     """
@@ -146,7 +139,6 @@ def analyze_list_overlap(list1, list2, content_attr='page_content'):
         'unique_to_list2_count': unique_to_list2_count,
     }
 ```
-<!-- {% endcode %} -->
 
 Then let's actually compare the lists and see what we have
 

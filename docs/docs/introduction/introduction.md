@@ -1,6 +1,6 @@
 ---
 slug: /
-title: Home
+title: Introduction
 sidebar_position: 1
 ---
 # FullStackRetrieval.com
@@ -16,15 +16,15 @@ This guide has two aims:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/G9qRxnwMYaI?si=SqKD3KHsnMHsg0Zk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### Start Here 👉 [Retrieval Overview](fullstackretrieval.com/retrieval-overview.md)
+### Start Here 👉 [Retrieval Overview](retrieval-overview.md)
 
 **New to retrieval?**
 
-Glad to have you! Start off by checking out our [Retrieval Overview](fullstackretrieval.com/retrieval-overview.md), this will be the home base for this guide
+Glad to have you! Start off by checking out our [Retrieval Overview](retrieval-overview.md), this will be the home base for this guide
 
 **Advanced Retrieval?**
 
-We still recommend getting a lay of the land on our [Retrieval Overview](fullstackretrieval.com/retrieval-overview.md) then branching to the section that interests you. Then head over to the [Retrieval Inventory](fullstackretrieval.com/retrieval-inventory.md) to explore more.
+We still recommend getting a lay of the land on our [Retrieval Overview](retrieval-overview.md) then branching to the section that interests you. Then head over to the [Retrieval Inventory](retrieval-inventory.md) to explore more.
 
 ### Why do we need a guide on retrieval?
 
@@ -51,4 +51,5 @@ Most of the content is made by [Greg Kamradt](https://twitter.com/GregKamradt) w
 
 ### Have Questions?
 
-Drop us a note on [Twitter](https://twitter.com/GregKamradt) or [contact us](query-transformation/)
+Drop us a note on [Twitter](https://twitter.com/GregKamradt) or [contact us](docs/contact.md)
+

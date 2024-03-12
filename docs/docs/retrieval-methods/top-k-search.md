@@ -4,7 +4,7 @@
 
 ## Overview
 
-_Top-K Similarity search type which specifies how you should retrieve documents from your knowledge base. This is type of a_ [_retrieval method_](./)_._
+_Top-K Similarity search type which specifies how you should retrieve documents from your knowledge base. This is type of a retrieval method_
 
 Top-K Similarity search is the process of pulling "K" number of documents from your knowledge base. Its aim is to get you the most _similar_ documents to a query according to your similarity metric.
 
@@ -15,7 +15,7 @@ There are two concepts which are important
 
 You'll often see us refer to this method as "vanilla retrieval." This is a delicious example of the basic retrieval method which powers many chatbots and question/answer tools. Further, it's commonly referred to as the "Hello world" example of doing retrieval.
 
-<!-- <figure><img src="../.gitbook/assets/TopKSimilaritySearch.gif" alt=""><figcaption></figcaption></figure> -->
+![Top K Search](img/TopKSimilaritySearch.gif)
 
 ### Why is this helpful?
 
@@ -26,7 +26,6 @@ You'll often see us refer to this method as "vanilla retrieval." This is a delic
 
 [_See notebook_](https://github.com/gkamradt/langchain-tutorials/blob/main/data\_generation/Ask%20A%20Book%20Questions.ipynb)
 
-<!-- {% code overflow="wrap" %} -->
 ```python
 # PDF Loaders. If unstructured gives you a hard time, try PyPDFLoader
 from langchain.document_loaders import UnstructuredPDFLoader, OnlinePDFLoader, PyPDFLoader, TextLoader
@@ -36,13 +35,11 @@ import os
 
 load_dotenv()
 ```
-<!-- {% endcode %} -->
 
 #### Load your data
 
 Next let's load up some data. I've put a few 'loaders' on there which will load data from different locations. Feel free to use the one that suits you. The default one queries one of Paul Graham's essays for a simple example. This process will only stage the loader, not actually load it.
 
-<!-- {% code overflow="wrap" %} -->
 ```python
 loader = TextLoader(file_path="../data/PaulGrahamEssays/vb.txt")
 
@@ -51,7 +48,6 @@ loader = TextLoader(file_path="../data/PaulGrahamEssays/vb.txt")
 # loader = UnstructuredPDFLoader("../data/field-guide-to-data-science.pdf")
 # loader = OnlinePDFLoader("https://wolfpaulus.com/wp-content/uploads/2017/05/field-guide-to-data-science.pdf")
 ```
-<!-- {% endcode %} -->
 
 Then let's go ahead and actually load the data.
 
@@ -61,7 +57,6 @@ data = loader.load()
 
 Then let's actually check out what's been loaded
 
-<!-- {% code overflow="wrap" %} -->
 ```python
 # Note: If you're using PyPDFLoader then it will split by page for you already
 print (f'You have {len(data)} document(s) in your data')
@@ -74,7 +69,6 @@ Here is a sample: January 2016Life is short, as everyone knows. When I was a kid
 about this. Is life actually short, or are we really complaining
 about its finiteness?  Would we be just as likely to fe
 ```
-<!-- {% endcode %} -->
 
 #### Chunk your data up into smaller documents
 
@@ -82,14 +76,12 @@ While we could pass the entire essay to a model w/ long context, we want to be p
 
 The first thing we'll do is chunk up our document into smaller pieces. The goal will be to take only a few of those smaller pieces and pass them to the LLM.
 
-<!-- {% code overflow="wrap" %} -->
 ```python
 # We'll split our data into chunks around 500 characters each with a 50 character overlap. These are relatively small.
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 texts = text_splitter.split_documents(data)
 ```
-<!-- {% endcode %} -->
 
 ```python
 # Let's see how many small chunks we have
@@ -138,7 +130,6 @@ docs = vectorstore.similarity_search(query)
 
 Then we can check them out. In theory, the texts which are deemed most similar should hold the answer to our question. But keep in mind that our query just happens to be a question, it could be a random statement or sentence and it would still work.
 
-<!-- {% code overflow="wrap" %} -->
 ```python
 # Here's an example of the first document that was returned
 for doc in docs:
@@ -171,7 +162,6 @@ and savor the time you have.  That's what you do when life is short.Notes[1]
 At first I didn't like it that the word that came to mind was
 one that had other meanings.  But then I realized the other meanings
 ```
-<!-- {% endcode %} -->
 
 #### Query those docs to get your answer back
 
@@ -198,13 +188,11 @@ query = "What is great about having kids?"
 docs = vectorstore.similarity_search(query)
 ```
 
-<!-- {% code overflow="wrap" %} -->
 ```python
 chain.run(input_documents=docs, question=query)
 
 > 'One great thing about having kids is that they make you spend time on things that matter. They remind you to prioritize the important things in life, like spending quality time with them. Having kids can also bring a sense of joy and fulfillment as you watch them grow and experience new things.'
 ```
-<!-- {% endcode %} -->
 
 Awesome! We just went and queried an external data source!
 

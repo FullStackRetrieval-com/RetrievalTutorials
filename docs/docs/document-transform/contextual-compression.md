@@ -4,11 +4,11 @@ description: '"The Fluff Remover" - Condense retrieved information for final con
 
 # Contextual Compression
 
-<!-- {% embed url="https://youtu.be/tsxEycc4tB0" %} -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tsxEycc4tB0?si=AN5qFFhbNmwv4tFB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Overview
 
-_Contextual Compression is method of the to_ [_transform_](./) _your retrieved documents_
+_Contextual Compression is method of the to transform your retrieved documents_
 
 Contextual Compression refers to the process of extracting information from your retrieved docs that you think will be relevant to your final answer. It's all about increasing the signal-to-noise ratio.
 
@@ -20,7 +20,7 @@ The key component here is the "compressor" which will do our extraction/compress
 
 Say you wanted to know everything about bananas, but you retrieved document talks about apples, oranges, and bananas. The compressor will pull out everything about bananas and then pass it on to your final prompt for a response.
 
-<!-- <figure><img src="../.gitbook/assets/ContextualCompression (1).gif" alt=""><figcaption></figcaption></figure> -->
+![Contextual Compression](img/ContextualCompression.gif)
 
 ### Why is this helpful?
 

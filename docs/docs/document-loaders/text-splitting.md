@@ -1,6 +1,6 @@
 # Text Splitting
 
-<!-- {% embed url="https://youtu.be/TcrB2RrzdC8" %} -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8OJC21T2SL4?si=MINauXrVCju2eoFu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 See the full code for this tutorial [here](https://github.com/FullStackRetrieval-com/RetrievalTutorials).
 
@@ -47,4 +47,4 @@ If you only walk away from this tutorial with one thing have it be the **The Chu
 
 **The Chunking Commandment:** Your goal is not to chunk for chunking sake, our goal is to get our data in a format where it can be retrieved for value later.
 
-See the full code tutorial [here](../retrieval-methods/).
+See the full code tutorial [here](https://github.com/FullStackRetrieval-com/RetrievalTutorials/blob/main/tutorials/LevelsOfTextSplitting/5_Levels_Of_Text_Splitting.ipynb).

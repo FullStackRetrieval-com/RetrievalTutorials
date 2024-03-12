@@ -1,10 +1,10 @@
 # Multi-Query 🦜🔗
 
-<!-- {% embed url="https://youtu.be/VYmiVkalgRc" %} -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VYmiVkalgRc?si=zCM2jVX8dsb0u7j7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Overview
 
-_Multi-Query is an advanced method of the_ [_Query Transformation_](./) _stage of retrieval_
+_Multi-Query is an advanced method of the Query Transformation stage of retrieval_
 
 In traditional retrieval you generally will supply 1 question or query to your database and using a similarity measure, you'll get 4-5 documents back.
 
@@ -12,7 +12,7 @@ However the **multi-query** method will generate multiple queries (hence the nam
 
 The goal is that the docs returned represent a more well rounded context for your LLM to work with.
 
-<!-- <figure><img src="../.gitbook/assets/MultiQuery.gif" alt=""><figcaption><p>The Multi-Query Method Of Query Transformation</p></figcaption></figure> -->
+![Retrieval Basics](img/MultiQuery.gif)
 
 ### Why is this helpful?
 
@@ -94,7 +94,6 @@ retriever_from_llm = MultiQueryRetriever.from_llm(
 
 Then once we actually ask for the relevant docs, we'll see the multiple other questions that were generated from our original question
 
-<!-- {% code overflow="wrap" %} -->
 ```python
 unique_docs = retriever_from_llm.get_relevant_documents(query=question)
 
@@ -106,7 +105,6 @@ Generated queries:
     '3. Could you list some fundamental use cases that demonstrate the concept of superlinear returns?'
 ]
 ```
-<!-- {% endcode %} -->
 
 The additional queries that were generated will now be used in addition to our original query to retrieve documents.
 
@@ -118,7 +116,6 @@ Pretty cool huh?
 
 If you wanted to edit the prompt template that is being used by the MultiQuery Retriever you can do that when you first create it. See the original prompt that is being used [here](https://github.com/langchain-ai/langchain/blob/60d025b83be4d4f884c67819904383ccd89cff87/libs/langchain/langchain/retrievers/multi\_query.py#L38).
 
-<!-- {% code overflow="wrap" %} -->
 ```python
 prompt_template = """You are an AI language model assistant.
 
@@ -137,7 +134,6 @@ retriever_from_llm = MultiQueryRetriever.from_llm(
     retriever=vectordb.as_retriever(), llm=llm, prompt=PROMPT
 )
 ```
-<!-- {% endcode %} -->
 
 ## References
 

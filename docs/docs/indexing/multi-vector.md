@@ -1,18 +1,15 @@
 # Multi-Vector 🦜🔗
-
-<!-- {% embed url="https://youtu.be/6NFtydQnUio" %} -->
-Full Stack Playlist On YouTube
-<!-- {% endembed %} -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6NFtydQnUio?si=c5Bs5OmgPqh_L5FE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Overview
 
-_Multi-Vector is an advanced method of the_ [_Indexing_](./) _stage of retrieval_
+_Multi-Vector is an advanced method of the Indexing stage of retrieval_
 
 Often times your raw, chunked, documents may _not_ be the optimal text to get your embeddings from. It could be the case that an alternative text derived from your original documents would be better. This could include summaries, hypothetical questions, extractions, or child documents.
 
 The goal of multi-vector retrieval is to have additional embeddings in your retrieval process which might more closely match your anticipated queries.
 
-<!-- <figure><img src="../.gitbook/assets/MultiVector (5).gif" alt=""><figcaption><p>Are the diagrams helpful? Let me know on <a href="https://twitter.com/GregKamradt">Twitter</a></p></figcaption></figure> -->
+![Multi-Vector](img/MultiVector.gif)
 
 ### Why is this helpful?
 
@@ -22,7 +19,6 @@ This is helpful when having a more processed or derived form of your original do
 
 First load up your keys
 
-<!-- {% code overflow="wrap" %} -->
 ```python
 from dotenv import load_dotenv
 import os
@@ -31,7 +27,6 @@ load_dotenv()
 
 openai_api_key=os.getenv('OPENAI_API_KEY', 'YourAPIKey')
 ```
-<!-- {% endcode %} -->
 
 Then load up your imports, there are quite a few we'll be using today
 
@@ -77,7 +72,6 @@ chain = load_summarize_chain(llm)
 
 Then we will loop through each one of our chunks, get the summary of that chunk, and then add a unique identifier to both the summary document and the original document that tie them together
 
-<!-- {% code overflow="wrap" %} -->
 ```
 id_key = "doc_id" # This is the key that we will tell the retriever to connect the summaries and original docs on
 
@@ -99,7 +93,6 @@ print (f"You have {len(summaries)} summaries to go along with your {len(chunks)}
 
 >> You have 5 summaries to go along with your 5 chunks
 ```
-<!-- {% endcode %} -->
 
 Good, we have the same number of chunks and summaries.
 
@@ -131,14 +124,12 @@ retriever.vectorstore.add_documents(summaries)
 
 If you wanted to do regular similarity search on your summaries then you can try it out here. Just call `.similarity_search` on your vectorstore inside your retriever
 
-<!-- {% code overflow="wrap" %} -->
 ```
 _similar_docs = retriever.vectorstore.similarity_search("What is is the influence of organizations on equity?")
 _similar_docs[0]
 
 >> Document(page_content="The passage discusses various topics related to learning, competition, equity, and wealth accumulation. It emphasizes the importance of gradual improvements in technique rather than relying on a few exceptional individuals. It also explores the concept of superlinear returns and how it relates to effort and motivation. The passage suggests that seeking competition can be a good heuristic but is not always a reliable indicator of promising problems. It mentions the influence of organizations and institutions on outcomes and the potential conflict with the concept of equity. The passage also touches on the shift from resource capture to discovery as a means of wealth accumulation. It concludes by highlighting the conventional-minded people's dislike of inequality and their inability to understand novel ideas.", metadata={'doc_id': 'c286a994-7e3a-42df-9bf0-2de8563dc472'})
 ```
-<!-- {% endcode %} -->
 
 But you see, we don't want the summaries returned, we want the original documents that are _associated_ with the summaries.
 
@@ -155,7 +146,6 @@ retriever.docstore.mset([(x.metadata[id_key], x) for x in chunks])
 
 Then we'll go run the same query and have the original document returned this time, not the summary
 
-<!-- {% code overflow="wrap" %} -->
 ```
 retrieved_docs = retriever.get_relevant_documents("What is is the influence of organizations on equity?")
 print (retrieved_docs[0].page_content[:500])
@@ -172,7 +162,6 @@ the step must be above the necessary return at that point or no one
 would bo
 {'source': 'http://www.paulgraham.com/superlinear.html', 'title': 'Superlinear Returns', 'language': 'No language found.', 'doc_id': 'c286a994-7e3a-42df-9bf0-2de8563dc472'}
 ```
-<!-- {% endcode %} -->
 
 Notice how the 'doc\_id' in the original document returned matches the 'doc\_id' in the summary above - good to go ;)
 
