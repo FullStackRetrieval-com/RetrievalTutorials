@@ -82,15 +82,15 @@ The diagram below will be the basis for this guide. It will provide us the visua
 Let's breakdown the entire diagram
 
 1. **Query** - The initial piece of data that will guide the retrieval process. This can be a user question, chat history, image, audio, prompt, table, or other various data.
-2. [**Query Transformation**](../category/query-transformation) - The process of modifying or reformatting the original query to make it more suitable for retrieval. It is not required to transform your query.
+2. **Query Transformation** - The process of modifying or reformatting the original query to make it more suitable for retrieval. It is not required to transform your query.
 3. **Raw Data Source** - The home and original collection of information. Unprocessed and unstructured from which you'll extract. This could be websites, images, picture, other applications, you name it. There may be multiple data sources.
-4. [**Document Loaders**](../category/document-loaders) - Tools or functions that extract data from a raw source
+4. **Document Loaders** - Tools or functions that extract data from a raw source
 5. **Documents** - Individual units of data or information that have been extracted and are ready for indexing. This might be individual pieces of texts, single customer records, etc.
-6. [**Index**](../category/indexing) - A data structure that organizes data or information from your documents that makes retrieval faster, more efficient, or better performing.
+6. **Index** - A data structure that organizes data or information from your documents that makes retrieval faster, more efficient, or better performing.
 7. **Knowledge Base** - A structured repository that contains indexed documents from which the retrieval process extracts documents from. This is often the combination of a vector store and document store.
-8. [**Retrieval Method**](../category/retrieval-methods) - The technique or algorithm used to search for an extract the most relevant documents from the knowledge base in response to a query
+8. **Retrieval Method** - The technique or algorithm used to search for an extract the most relevant documents from the knowledge base in response to a query
 9. **Relevant Docs** - The subset of documents that the retrieval method determines to be most useful in addressing the query
-10. [**Document Transform**](../category/document-transform) - The process of further refining or reformatting the relevant documents to make them more suitable for the language model. This could include summarization, compression (removing information) or other transformations.
+10. **Document Transform** - The process of further refining or reformatting the relevant documents to make them more suitable for the language model. This could include summarization, compression (removing information) or other transformations.
 11. **Context** - The combined content derived from the transformed documents that provide the necessary background or information for the language model to generate its response.
 12. **Large Language Model (LLM)** - The machine learning model that will generate a response based on the context and prompt it's given
 13. **Prompting Method** (coming soon) - The technique or method used to present the context to the language model. This also includes chaining different prompts together.

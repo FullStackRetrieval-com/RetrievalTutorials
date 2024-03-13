@@ -43,7 +43,7 @@ load_dotenv()
 openai_api_key=os.getenv('OPENAI_API_KEY', 'YourAPIKey')
 ```
 
-Then load up your documents. We'll move quickly through this part. Head over to our [document loaders](../document-loaders-coming-soon/) section if you'd like to see more.
+Then load up your documents. We'll move quickly through this part. Head over to our document loaders section if you'd like to see more.
 
 ```python
 from langchain.embeddings.openai import OpenAIEmbeddings
@@ -138,5 +138,5 @@ retriever_from_llm = MultiQueryRetriever.from_llm(
 ## References
 
 * [Full notebook with code](https://github.com/gkamradt/langchain-tutorials/blob/main/data\_generation/Advanced%20Retrieval%20With%20LangChain.ipynb)
-* [LangChain Documentation](./)
+* [LangChain Documentation](https://python.langchain.com/docs/modules/data_connection/retrievers/MultiQueryRetriever)
   * [Prompt used by default](https://github.com/langchain-ai/langchain/blob/60d025b83be4d4f884c67819904383ccd89cff87/libs/langchain/langchain/retrievers/multi\_query.py#L38)
