@@ -16,6 +16,7 @@ description: Terms can be tough, here's a growing list of popular ones
 * **Index:** An index is a data structure that allows for fast retrieval of documents or chunks within a large dataset. It maps key terms or features to their locations in a dataset
 * **Knowledge Base:** A structured database of facts, information, and rules that a retrieval system can draw upon to answer queries or perform tasks
 * **Maximum Marginal Relevance (MMR):** An algorithm used to provide a set of search results that are both relevant to the query and diverse, minimizing content overlap to offer a broader information range
+* **Reranker:** A model that improves the precision of document retrieval by reevaluating and scoring the relevance of a pre-selected set of documents to a specific query, aiming to refine the results for higher accuracy.
 * **Retriever:** In the context of retrieval systems, a retriever is a component that fetches relevant documents from a corpus or database based on a query, often using embeddings and similarity measures.
 * **Sentiment:** The emotional tone or meaning behind a series of words, used to understand the attitudes, opinions, and emotions expressed in a chunk of text
 * **Text Splitting:** Another way to say chunking. The act of splitting up your long body of text into smaller parts
