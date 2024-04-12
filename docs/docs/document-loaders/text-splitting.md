@@ -1,3 +1,8 @@
+---
+title: Text Splitting (Chunking)
+description: 'Five Levels of Text Splitting'
+---
+
 # Text Splitting
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8OJC21T2SL4?si=MINauXrVCju2eoFu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
