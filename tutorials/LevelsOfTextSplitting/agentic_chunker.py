@@ -238,7 +238,7 @@ class AgenticChunker:
         chunk_outline = ""
 
         for chunk_id, chunk in self.chunks.items():
-            single_chunk_string = f"""Chunk ({chunk['chunk_id']}): {chunk['title']}\nSummary: {chunk['summary']}\n\n"""
+            single_chunk_string = f"""Chunk ID: {chunk['chunk_id']}\nChunk Name: {chunk['title']}\nChunk Summary: {chunk['summary']}\n\n"""
         
             chunk_outline += single_chunk_string
         
